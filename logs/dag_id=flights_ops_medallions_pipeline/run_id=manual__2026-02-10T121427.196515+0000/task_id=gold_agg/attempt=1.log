@@ -1,0 +1,20 @@
+[2026-02-10T12:14:56.429+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-10T12:14:56.480+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flights_ops_medallions_pipeline.gold_agg manual__2026-02-10T12:14:27.196515+00:00 [queued]>
+[2026-02-10T12:14:56.494+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flights_ops_medallions_pipeline.gold_agg manual__2026-02-10T12:14:27.196515+00:00 [queued]>
+[2026-02-10T12:14:56.495+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-02-10T12:14:56.513+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): gold_agg> on 2026-02-10 12:14:27.196515+00:00
+[2026-02-10T12:14:56.521+0000] {standard_task_runner.py:64} INFO - Started process 4800 to run task
+[2026-02-10T12:14:56.524+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', '***_ops_medallions_pipeline', 'gold_agg', 'manual__2026-02-10T12:14:27.196515+00:00', '--job-id', '317', '--raw', '--subdir', 'DAGS_FOLDER/flight_pipeline.py', '--cfg-path', '/tmp/tmpiwsabzqm']
+[2026-02-10T12:14:56.528+0000] {standard_task_runner.py:91} INFO - Job 317: Subtask gold_agg
+[2026-02-10T12:14:56.609+0000] {task_command.py:426} INFO - Running <TaskInstance: flights_ops_medallions_pipeline.gold_agg manual__2026-02-10T12:14:27.196515+00:00 [running]> on host 7d9a94309692
+[2026-02-10T12:14:56.763+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='***_ops_medallions_pipeline' AIRFLOW_CTX_TASK_ID='gold_agg' AIRFLOW_CTX_EXECUTION_DATE='2026-02-10T12:14:27.196515+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-10T12:14:27.196515+00:00'
+[2026-02-10T12:14:56.765+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-10T12:14:56.815+0000] {logging_mixin.py:188} INFO - [gold] Lecture du fichier : /opt/airflow/data/silver/***_silver_20260210.csv
+[2026-02-10T12:14:56.862+0000] {logging_mixin.py:188} INFO - [gold] Sauvegarde vers : /opt/airflow/data/gold/***_gold_20260210.csv
+[2026-02-10T12:14:56.895+0000] {logging_mixin.py:188} INFO - [gold] Succès – fichier créé et poussé : /opt/airflow/data/gold/***_gold_20260210.csv
+[2026-02-10T12:14:56.897+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-02-10T12:14:56.897+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-10T12:14:56.914+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=***_ops_medallions_pipeline, task_id=gold_agg, run_id=manual__2026-02-10T12:14:27.196515+00:00, execution_date=20260210T121427, start_date=20260210T121456, end_date=20260210T121456
+[2026-02-10T12:14:56.939+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-10T12:14:56.973+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-10T12:14:56.976+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
