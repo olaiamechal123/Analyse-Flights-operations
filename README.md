@@ -20,3 +20,16 @@ Ce projet met en place un pipeline ETL/ELT automatisé qui :
 - Permet la création de tableaux de bord analytiques
 
 ## Architecture
+OpenSky Network API (temps réel)
+↓
+Apache Airflow (orchestration)
+↓
+Bronze  →  JSON bruts horodatés
+↓
+Silver  →  CSV nettoyés & filtrés
+↓
+Gold    →  KPI agrégés par pays (CSV)
+↓
+Snowflake (table FLIGHTS_KPIS)
+↓
+Dashboards & analyses (Snowsight)
