@@ -1,3 +1,4 @@
+
 # Analyse des Opérations de Vols (Flight Operations Analytics)
 
 Projet de pipeline de données en temps réel pour l'analyse des opérations aériennes, utilisant **Apache Airflow**, l'API **OpenSky Network** et **Snowflake**.
@@ -19,17 +20,22 @@ Ce projet met en place un pipeline ETL/ELT automatisé qui :
 - Charge les résultats dans **Snowflake**
 - Permet la création de tableaux de bord analytiques
 
-## Architecture
-OpenSky Network API (temps réel)
-↓
-Apache Airflow (orchestration)
-↓
-Bronze  →  JSON bruts horodatés
-↓
-Silver  →  CSV nettoyés & filtrés
-↓
-Gold    →  KPI agrégés par pays (CSV)
-↓
-Snowflake (table FLIGHTS_KPIS)
-↓
-Dashboards & analyses (Snowsight)
+## Objectifs analytiques
+
+- Pays réalisant le plus de vols → vitesse moyenne des avions
+- Analyse détaillée des vols au **Maroc**
+- Nombre d’avions en vol / au sol au Maroc
+- Top pays par nombre de vols
+- Top pays par nombre d’avions au sol
+- Évolution de la vitesse moyenne (focus États-Unis → observation : stabilité)
+
+## Données sources
+
+**OpenSky Network** — données ADS-B en temps réel  
+Colonnes conservées :
+
+- `icao24`          : identifiant unique 24 bits (hex)
+- `origin_country`  : pays d'immatriculation
+- `velocity`        : vitesse au sol (m/s)
+- `on_ground`       : boolean – avion au sol ?
+- 
