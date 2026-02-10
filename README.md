@@ -64,14 +64,14 @@ Colonnes conservées :
 ```text
 flight-operations-analytics/
 ├── dags/
-│   └── flights_pipeline.py           # DAG principal Airflow
+│   └── flights_pipeline.py           
 ├── scripts/
-│   ├── bronze_ingested.py              # Récupération API → JSON brut
-│   ├── sliver_transform.py             # Nettoyage → CSV silver
-│   ├── gold_aggregation.py                # Agrégations KPI → CSV gold
-│   └── load_gold_to_snowflake.py          # Chargement vers Snowflake
-├── docker-compose.yml                # Configuration Docker Airflow + Postgres                     
-├── requirements.txt                  # Dépendances Python (si nécessaire)
+│   ├── bronze_ingested.py              
+│   ├── sliver_transform.py             
+│   ├── gold_aggregation.py               
+│   └── load_gold_to_snowflake.py         
+├── docker-compose.yml                                    
+├── requirements.txt                 
 └── README.md
 ```
 
