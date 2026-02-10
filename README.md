@@ -28,6 +28,31 @@ Ce projet met en place un pipeline ETL/ELT automatisé qui :
 - Top pays par nombre de vols
 - Top pays par nombre d’avions au sol
 - Évolution de la vitesse moyenne (focus États-Unis → observation : stabilité)
+## Architecture Pipeline
+
+```text
+[ OpenSky Network API ] 
+       (temps réel ADS-B)
+            │
+            ▼
+[ Apache Airflow ]
+   (orchestration DAG)
+            │
+            ▼
+[ Bronze ] ── JSON brut horodaté ── /opt/airflow/data/bronze
+            │
+            ▼
+[ Silver ] ── CSV nettoyé & réduit ── /opt/airflow/data/silver
+            │
+            ▼
+[ Gold   ] ── KPI agrégés par pays (CSV)
+            │
+            ▼
+[ Snowflake ] ── table FLIGHTS_KPIS
+            │
+            ▼
+[ Dashboards analytiques (Snowsight) ]
+```
 
 ## Données sources
 
