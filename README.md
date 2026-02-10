@@ -1,5 +1,5 @@
 
-# Analyse des Opérations de Vols (Flight Operations Analytics)
+# Analyse des Opérations de Vols 
 
 Projet de pipeline de données en temps réel pour l'analyse des opérations aériennes, utilisant **Apache Airflow**, l'API **OpenSky Network** et **Snowflake**.
 
