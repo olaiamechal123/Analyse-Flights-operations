@@ -21,9 +21,6 @@ Ce projet met en place un pipeline ETL/ELT automatisé qui :
 - Permet la création de tableaux de bord analytiques
 
 ## Objectifs analytiques
-
-- Pays réalisant le plus de vols → vitesse moyenne des avions
-- Nombre d’avions en vol / au sol au Maroc
 - Top pays par nombre de vols
 - Top pays par nombre d’avions au sol
 - Évolution de la vitesse moyenne (focus États-Unis → observation : stabilité)
@@ -69,12 +66,11 @@ flight-operations-analytics/
 ├── dags/
 │   └── flights_pipeline.py           # DAG principal Airflow
 ├── scripts/
-│   ├── bronze_script.py              # Récupération API → JSON brut
-│   ├── silver_script.py              # Nettoyage → CSV silver
-│   ├── gold_script.py                # Agrégations KPI → CSV gold
-│   └── load_to_snowflake.py          # Chargement vers Snowflake
-├── docker-compose.yml                # Configuration Docker Airflow + Postgres
-├── .env.example                      # Modèle des variables d'environnement
+│   ├── bronze_ingested.py              # Récupération API → JSON brut
+│   ├── sliver_transform.py             # Nettoyage → CSV silver
+│   ├── gold_aggregation.py                # Agrégations KPI → CSV gold
+│   └── load_gold_to_snowflake.py          # Chargement vers Snowflake
+├── docker-compose.yml                # Configuration Docker Airflow + Postgres                     
 ├── requirements.txt                  # Dépendances Python (si nécessaire)
 └── README.md
 ```
