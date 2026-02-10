@@ -23,7 +23,6 @@ Ce projet met en place un pipeline ETL/ELT automatisé qui :
 ## Objectifs analytiques
 
 - Pays réalisant le plus de vols → vitesse moyenne des avions
-- Analyse détaillée des vols au **Maroc**
 - Nombre d’avions en vol / au sol au Maroc
 - Top pays par nombre de vols
 - Top pays par nombre d’avions au sol
