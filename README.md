@@ -106,6 +106,10 @@ Orchestration des quatre étapes : bronze → silver → gold → load
 2. Analyse des pays présentant le plus grand nombre d’avions au sol  : États-Unis
 3. Focus sur les États-Unis (pays réalisant le plus de vols) : observation de la stabilité de la vitesse moyenne au cours du temps
 
-![Dashoboard Simple](https://github.com/olaiamechal123/Analyse-Flights-operations/blob/main/dashboard_simple.PNG)
-   
+
+| Dataset Source (OpenSky) | Dashboard Final (Snowflake) |
+| :---: | :---: |
+| ![Dataset](https://github.com/olaiamechal123/Analyse-Flights-operations/blob/main/dataset.PNG) | ![Dashboard](https://github.com/olaiamechal123/Analyse-Flights-operations/blob/main/dashboard_simple.PNG) |
+
+
  
