@@ -38,4 +38,20 @@ Colonnes conservées :
 - `origin_country`  : pays d'immatriculation
 - `velocity`        : vitesse au sol (m/s)
 - `on_ground`       : boolean – avion au sol ?
-- 
+## Structure du projet
+
+```text
+flight-operations-analytics/
+├── dags/
+│   └── flights_pipeline.py           # DAG principal Airflow
+├── scripts/
+│   ├── bronze_script.py              # Récupération API → JSON brut
+│   ├── silver_script.py              # Nettoyage → CSV silver
+│   ├── gold_script.py                # Agrégations KPI → CSV gold
+│   └── load_to_snowflake.py          # Chargement vers Snowflake
+├── docker-compose.yml                # Configuration Docker Airflow + Postgres
+├── .env.example                      # Modèle des variables d'environnement
+├── requirements.txt                  # Dépendances Python (si nécessaire)
+└── README.md
+```
+ 
